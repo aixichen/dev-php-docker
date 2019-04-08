@@ -1,0 +1,14 @@
+version: "3"
+services :
+   nginx:
+    build: ./nginx #编译./mysql下的Dockerfile
+    ports:
+      - 80:80 # 绑定服务器端口:容器端口
+    volumes:
+      - G:\web:/var/wwwroot
+   php:
+    build: ./php
+    expose:
+      - 9001 # 绑定服务器端口:容器端口
+    volumes:
+      - G:\web:/var/wwwroot
